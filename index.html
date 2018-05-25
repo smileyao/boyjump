@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>踩云彩跳高</title> 
+      <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <link href="http://cdn.bootcss.com/twitter-bootstrap/2.0.4/css/bootstrap.min.css" rel="stylesheet" /> 
+  <style type="text/css" adt="123"></style>
+  <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <link type="text/css" rel="stylesheet" href="css/sidebar.css" />
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
+	<script type="text/javascript">
+        var P = {
+            showShare : function(op) {
+				updateRecord(JSON.stringify(op.score));
+            }
+        }
+	</script>
+ </head> 
+ <body> 
+  <br /> 
+  <div class="title" style="text-align: center;">
+   <h1>踩云彩跳高</h1> 
+   <p></p>
+  </div> 
+  <div class="container"> 
+   <div class="row clearfix"> 
+    <div class="span6"> 
+     <div style="position: relative; width: 336px; height: 560px; top: 0px;" id="gameDiv">
+      <div id="chf2" style="width: 336px; height: 560px;">
+       <canvas id="gcvs" width="336" height="560" style="width: 336px; height: 560px;"></canvas>
+      </div>
+     </div> 
+    </div> 
+    <div class="span6" id="jiange"> 
+    </div> 
+    <div class="span6"> 
+     <div class="tabbable pleft"> 
+      <h4>推荐运行环境：Chrome 66  请启用<a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>插件</h4> 
+	  <h4>游戏结束后可点击SHARE按钮花费0.0001NAS将分数上链</h4> 
+	  <h4>可点击个人或者世界记录的刷新按钮获取链上的最新记录</h4> 
+      <br /> 
+      <legend class=""></legend> 
+      <h3>个人记录: &nbsp;&nbsp;<span id="personalMaxRecord">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-success" onclick="getPersonalMaxRecord()">刷新</button></h3> 
+      <br /> 
+      <h3>世界记录：&nbsp;&nbsp;<span id="worldMaxRecord">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-success" onclick="getWorldMaxRecord()">刷新</button></h3> 
+      <br /> 
+     </div> 
+    </div> 
+   </div> 
+   	<div style="text-align: center;">
+            使用<a href="https://nebulas.io/">星云链</a>驱动，<a
+                href="https://incentive.nebulas.io/cn/signup.html?invite=kLRat">提交DAPP获得100NAS</a>
+   </div>
+  </div>
+
+   <script type="text/javascript" src="js/nebPay.js"></script>
+  <script type="text/javascript" src="js/play.js"></script>
+  <style type="text/css" adt="123"></style>
+  <script type="text/javascript" src="js/gm17.min.js"></script>
+  <script>
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            WeixinJSBridge.call('showOptionMenu');
+        });
+	</script>
+ </body>
+</html>
