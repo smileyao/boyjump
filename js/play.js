@@ -1,7 +1,7 @@
 ﻿var NebPay = require("nebpay");
 var nebPay = new NebPay();
 
-var dappAddress = "n1jyQFMTftrVpE1HmDBanmacLs95HB9xw9Q";
+var dappAddress = "n22xpbB9NzxtuCUNBBEJCoPfz1xWJTMMvqo";
 
 
 function updateRecord(score) {
