@@ -5,6 +5,10 @@ var dappAddress = "n22xpbB9NzxtuCUNBBEJCoPfz1xWJTMMvqo";
 
 
 function updateRecord(score) {
+	if(!checkWalletIsInstall()){
+		alert ("钱包扩展未安装，请先安装WebExtensionWallet.")
+		return;
+	}
     var to = dappAddress;
     var value = "0.0001";
     var callFuncation = "updateRecord";
@@ -29,15 +33,30 @@ function updateRecord(score) {
     })
 };
 
+function checkWalletIsInstall(){
+	if (typeof(webExtensionWallet) === "undefined") {
+        return false;
+    }
+	return true;
+}
+
 
 //获取玩家记录
 function getPersonalMaxRecord() {
+	if(!checkWalletIsInstall()){
+		alert ("钱包扩展未安装，请先安装WebExtensionWallet.")
+		return;
+	}
     nebPay.simulateCall(dappAddress, 0, "getPersonalMaxRecord", "[]",{
         listener: getPersonalMaxRecordCallBack
     });
 };
 //获取世界纪录
 function getWorldMaxRecord() {
+	if(!checkWalletIsInstall()){
+		alert ("钱包扩展未安装，请先安装WebExtensionWallet.")
+		return;
+	}
     nebPay.simulateCall(dappAddress, 0, "getWorldMaxRecord","[]",{
         listener: getWorldMaxRecordCallBack
     });
